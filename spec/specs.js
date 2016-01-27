@@ -13,4 +13,10 @@ describe('Player Objects', function(){
     expect(player1.curScore).to.equal(4);
     expect(player1.totalScore).to.equal(55);
   });
+  it('will create player2(two) with 3 objects', function(){
+    var player2 = new Player("Tim", 6, 7);
+    expect(player2.name).to.equal("Tim");
+    expect(player2.curScore).to.equal(6);
+    expect(player2.totalScore).to.equal(7);
+  });
 });
