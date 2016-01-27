@@ -23,7 +23,7 @@ function dice(){
 }
 
 
-var pigDice = function(roll) {
+function pigDice(roll) {
   if (roll === 1) {
     return 1;
   }
@@ -93,7 +93,12 @@ $(document).ready(function(){
 
       while (player1.totalScore < 100) {
         if (p1Disabled === false) {
-        $(".player1-curScore").text(pigDice(dice()));
+        var diceRoll = pigDice(dice());
+        $(".player1-curScore").text(diceRoll);
+        if(diceRoll === 1){
+          $("#p1Rollbtn").prop('disabled', true)
+          $("#p2Rollbtn").prop('disabled', false)
+        }
           player1.totalScore = player1.totalScore + 100;
         }
         $(".player1-totalScore").text(player1.totalScore);
