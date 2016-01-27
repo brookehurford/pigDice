@@ -45,3 +45,15 @@ var pigDice = function(roll) {
 };
 
 //User Logic
+
+$(document).ready(function(){
+  $("#startGame").click(function(){
+    if($("#player1NameForm").val() === "" || $("#player2NameForm").val() === "" ){
+      alert('please input fields before begining game');
+    } else{
+      $(".startGame").hide();
+      $(".pigDiceGame").show();
+      //start game
+    }
+  });
+});

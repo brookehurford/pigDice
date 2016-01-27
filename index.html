@@ -19,19 +19,31 @@
         <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
       </ol>
 
-      <div class="row">
+      <!-- Start the game !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+      <div class="startGame">
+        <label for="player1">Player 1 name</label>
+        <input type="text" name="name" value="" id="player1NameForm" placeholder="Please enter name">
+        <br><br>
+        <label for="player2">Player 2 name</label>
+        <input type="text" name="name" value="" id="player2NameForm" placeholder="Please enter name">
+        <br><br>
+        <button type="button" class="btn btn-lg btn-success" id="startGame" name="button">Start Game</button>
+      </div>
+
+
+      <div class="row pigDiceGame">
         <div class="col-md-6">
           <h3>Player 1</h3>
-          <button class="btn btn-primary">Roll</button>
-          <button class="btn btn-default">Hold</button>
+          <button class="btn btn-primary" id="p1Rollbtn">Roll</button>
+          <button class="btn btn-default" id="p1Holdbtn">Hold</button>
           <br></br>
           <p>Current Score: </p> <span class="player1-curScore"></span>
           <p>Total Score: </p> <span class="player1-totalScore"></span>
         </div>
         <div class="col-md-6">
           <h3>Player 2</h3>
-          <button class="btn btn-primary">Roll</button>
-          <button class="btn btn-default">Hold</button>
+          <button class="btn btn-primary" id="p2Rollbtn">Roll</button>
+          <button class="btn btn-default" id="p2Holdbtn">Hold</button>
           <br></br>
           <p>Current Score: </p> <span class="player2-curScore"></span>
           <p>Total Score: </p> <span class="player2-totalScore"></span>
