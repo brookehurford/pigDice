@@ -93,6 +93,7 @@ $(document).ready(function(){
 
       while (player1.totalScore < 100) {
         if (p1Disabled === false) {
+        $(".player1-curScore").text(pigDice(dice()));
           player1.totalScore = player1.totalScore + 100;
         }
         $(".player1-totalScore").text(player1.totalScore);
