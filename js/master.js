@@ -55,18 +55,42 @@ $(document).ready(function(){
 
       //start game
 
+      /**********
+      ***NOTES****
+      $("#p1Rollbtn").prop('disabled', true);
+          $("#p1Rollbtn, #p1Holdbtn").is(":disabled") equals true
+      **********
+      *********/
+
       //capture values from 2 input forms fields, to equal object.name
       var player1Name = $("input#player1NameForm").val();
       var player2Name = $("input#player2NameForm").val();
 
       // create initial player objects Constructed by 'Player at line 3'
-      var player1 = new Player(player1Name, 0, 0)
-      var player2 = new Player(player2Name, 0, 0)
+      var player1 = new Player(player1Name, 0, 0);
+      var player2 = new Player(player2Name, 0, 0);
       $("#player1Span").text(player1.name);
       $("#player2Span").text(player2.name);
       $(".pigDiceGame").show();
 
+      // Disables player 2 buttons on start game load
+      $("#p2Rollbtn, #p2Holdbtn").prop('disabled', true);
 
+
+    $("#p1Rollbtn").click(function() {
+      var player1 = new Player(player1Name, 0, 0);
+      var player2 = new Player(player2Name, 0, 0);
+      var playerRoll = pigDice(dice());
+      console.log(player1, player2);
+
+      // while (player1.totalScore || player2.totalScore < 100) {
+      //
+      //
+      // };
+
+
+
+    });
     }
   });
 });
