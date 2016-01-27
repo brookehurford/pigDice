@@ -78,13 +78,23 @@ $(document).ready(function(){
 
       while (player1.totalScore < 100) {
         if (p1Disabled === false) {
-        $(".player1-curScore").text(diceRoll);
+          $(".p1CurrentRoll").text(diceRoll);
+          $(".player1-curScore").text(p1DiceRollValue);
+          console.log(p1DiceRollValue += diceRoll);
+          $("#p1Holdbtn").click(function(){
+            $("#p1Rollbtn").prop('disabled', true);
+            $("#p2Rollbtn").prop('disabled', false);
+          });
+
           if(diceRoll === 1){
-            $("#p1Rollbtn").prop('disabled', true)
-            $("#p2Rollbtn").prop('disabled', false)
-          }
-            player1.totalScore = player1.totalScore + 100; {
-          }
+            $("#p1Rollbtn").prop('disabled', true);
+            $("#p2Rollbtn").prop('disabled', false);
+            p1DiceRollValue = 0;
+            $(".player1-curScore").text(p1DiceRollValue);
+            break;
+          } else {
+            player1.totalScore = player1.totalScore + 100;
+          }          
         $(".player1-totalScore").text(player1.totalScore);
         }
       }
@@ -99,24 +109,23 @@ $(document).ready(function(){
       var diceRoll = pigDice(dice());
 
       while (player2.totalScore < 100) {
-
         if (p2Disabled === false) {
-          $(".player2-curScore").text(diceRoll);
+          $(".p2CurrentRoll").text(diceRoll);
+          $(".player2-curScore").text(p2DiceRollValue);
           console.log(p2DiceRollValue += diceRoll);
           $("#p2Holdbtn").click(function(){
-            $("#p2Rollbtn").prop('disabled', true)
-            $("#p1Rollbtn").prop('disabled', false)
-
+            $("#p2Rollbtn").prop('disabled', true);
+            $("#p1Rollbtn").prop('disabled', false);
           });
 
-
           if(diceRoll === 1){
-            // debugger;
-            $("#p2Rollbtn").prop('disabled', true)
-            $("#p1Rollbtn").prop('disabled', false)
+            $("#p2Rollbtn").prop('disabled', true);
+            $("#p1Rollbtn").prop('disabled', false);
+            p2DiceRollValue = 0;
+            $(".player2-curScore").text(p2DiceRollValue);
             break;
           } else {
-          
+
             player2.totalScore = player2.totalScore + 100;
           }
         $(".player2-totalScore").text(player2.totalScore);
