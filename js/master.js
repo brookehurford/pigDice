@@ -54,6 +54,13 @@ $(document).ready(function(){
       $(".startGame").hide();
       $(".pigDiceGame").show();
       //start game
+
+      var player1Name = $("input#player1NameForm").val();
+      var player2Name = $("input#player2NameForm").val();
+
+      var player1 = new Player(player1Name, 0, 0)
+      var player2 = new Player(player2Name, 0, 0)
+
     }
   });
 });
