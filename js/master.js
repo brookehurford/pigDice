@@ -52,14 +52,20 @@ $(document).ready(function(){
       alert('please input fields before begining game');
     } else{
       $(".startGame").hide();
-      $(".pigDiceGame").show();
+
       //start game
 
+      //capture values from 2 input forms fields, to equal object.name
       var player1Name = $("input#player1NameForm").val();
       var player2Name = $("input#player2NameForm").val();
 
+      // create initial player objects Constructed by 'Player at line 3'
       var player1 = new Player(player1Name, 0, 0)
       var player2 = new Player(player2Name, 0, 0)
+      $("#player1Span").text(player1.name);
+      $("#player2Span").text(player2.name);
+      $(".pigDiceGame").show();
+
 
     }
   });
