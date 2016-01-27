@@ -53,20 +53,13 @@ $(document).ready(function(){
     } else{
       $(".startGame").hide();
 
-      //start game
-
-      /**********
-      ***NOTES****
-      $("#p1Rollbtn").prop('disabled', true);
-          $("#p1Rollbtn, #p1Holdbtn").is(":disabled") equals true
-      **********
-      *********/
+      //start game by showing player 1 and player 2, and showing the buttons to play the game.
 
       //capture values from 2 input forms fields, to equal object.name
       var player1Name = $("input#player1NameForm").val();
       var player2Name = $("input#player2NameForm").val();
 
-      // create initial player objects Constructed by 'Player at line 3'
+      // create initial player objects Constructed by 'Player' at line 3.
       var player1 = new Player(player1Name, 0, 0);
       var player2 = new Player(player2Name, 0, 0);
       $("#player1Span").text(player1.name);
@@ -74,8 +67,7 @@ $(document).ready(function(){
       $(".pigDiceGame").show();
 
       // Disables player 2 buttons on start game load
-      $("#p2Rollbtn, #p2Holdbtn").prop('disabled', true);
-      $("#p1Rollbtn, #p1Holdbtn").prop('disabled', false);
+
 
     //
     // $("#p1Rollbtn").click(function() {
@@ -85,43 +77,48 @@ $(document).ready(function(){
     //   var playerRoll = pigDice(dice());
 
     $("#p1Rollbtn").click(function() {
-      // debugger;
       var player1 = new Player(player1Name, 0, 0);
       var player2 = new Player(player2Name, 0, 0);
       var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
       var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+      var diceRoll = pigDice(dice());
 
       while (player1.totalScore < 100) {
         if (p1Disabled === false) {
-        var diceRoll = pigDice(dice());
         $(".player1-curScore").text(diceRoll);
-        if(diceRoll === 1){
-          $("#p1Rollbtn").prop('disabled', true)
-          $("#p2Rollbtn").prop('disabled', false)
-        }
-          player1.totalScore = player1.totalScore + 100;
-        }
-        $(".player1-totalScore").text(player1.totalScore);
+          if(diceRoll === 1){
+            $("#p1Rollbtn").prop('disabled', true)
+            $("#p2Rollbtn").prop('disabled', false)
+          }
+            player1.totalScore = player1.totalScore + 100;
+          }
+          $(".player1-totalScore").text(player1.totalScore);
+      }
+    });
+
+    $("#p2Rollbtn").click(function() {
+      var player1 = new Player(player1Name, 0, 0);
+      var player2 = new Player(player2Name, 0, 0);
+      var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
+      var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+      var diceRoll = pigDice(dice());
+
+      while (player2.totalScore < 100) {
+        debugger;
+        if (p2Disabled === false) {
+        $(".player2-curScore").text(diceRoll);
+          if(diceRoll === 1){
+            $("#p2Rollbtn").prop('disabled', true)
+            $("#p1Rollbtn").prop('disabled', false)
+          }
+            player2.totalScore = player2.totalScore + 100;
+          }
+          $(".player2-totalScore").text(player2.totalScore);
+          console.log(player2.totalScore);
       }
     });
 
 
-
-
-      // while (player1.totalScore || player2.totalScore < 100) {
-      //   var player1 = new Player(player1Name, 0, 0);
-      //   var player2 = new Player(player2Name, 0, 0);
-      //   var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
-      //   var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
-      //   if (p1Disabled === false) {
-      //     $("#p1Rollbtn").click(function(){
-      //       console.log(player2.totalScore);
-      //
-      //       player2.totalScore = player2.totalScore + 100;
-      //     });
-      //   }
-      // };
-    // });
     }
   });
 });
