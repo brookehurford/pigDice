@@ -75,22 +75,47 @@ $(document).ready(function(){
 
       // Disables player 2 buttons on start game load
       $("#p2Rollbtn, #p2Holdbtn").prop('disabled', true);
+      $("#p1Rollbtn, #p1Holdbtn").prop('disabled', false);
 
+    //
+    // $("#p1Rollbtn").click(function() {
+    //   var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
+    //   var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+    //   var player1 = new Player(player1Name, 0, 0);
+    //   var playerRoll = pigDice(dice());
 
     $("#p1Rollbtn").click(function() {
+      // debugger;
       var player1 = new Player(player1Name, 0, 0);
       var player2 = new Player(player2Name, 0, 0);
-      var playerRoll = pigDice(dice());
-      console.log(player1, player2);
+      var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
+      var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+
+      while (player1.totalScore < 100) {
+        if (p1Disabled === false) {
+          player1.totalScore = player1.totalScore + 100;
+        }
+        $(".player1-totalScore").text(player1.totalScore);
+      }
+    });
+
+
+
 
       // while (player1.totalScore || player2.totalScore < 100) {
+      //   var player1 = new Player(player1Name, 0, 0);
+      //   var player2 = new Player(player2Name, 0, 0);
+      //   var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
+      //   var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+      //   if (p1Disabled === false) {
+      //     $("#p1Rollbtn").click(function(){
+      //       console.log(player2.totalScore);
       //
-      //
+      //       player2.totalScore = player2.totalScore + 100;
+      //     });
+      //   }
       // };
-
-
-
-    });
+    // });
     }
   });
 });
