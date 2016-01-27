@@ -1,3 +1,10 @@
+function Player(name, curScore, totalScore){
+  this.name = name;
+  this.curScore = curScore;
+  this.totalScore = totalScore;
+}
+
+
 function dice(){
   return Math.floor(Math.random() * 6) + 1;
 }
