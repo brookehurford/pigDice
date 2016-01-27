@@ -1,3 +1,9 @@
+function dice(){
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+
+
 var pigDice = function(num) {
   if (num === 1) {
     return 1;
