@@ -1,53 +1,10 @@
-# Installation Instructions:
+# Pig Dice
 
-##### Run command using your terminal within empty Project Folder i.e `$ ~/Desktop/empty_project`
-##### Install core files + automate .pairs file with nano:
-
-```bash
-curl -L -o x.zip https://github.com/TimDurward/task-runner/archive/master.zip && unzip x.zip && rm x.zip && mv task-runner-master/* . && rm -r task-runner-master/ && echo -e "pairs:\n  td: Tim Durward\n  mkn: Michael Kaiser-Nyman\nemail_addresses:\n  td: timothy.a.durward@gmail.com\n  mkn: michael@gmail.com" >> ~/.pairs && nano ~/.pairs && echo -e "\n\nInstalled:\nCore files\n.Pairs\n\nEnjoy - github.com/timdurward\n"
-```
-##### Install core files without .pairs automation:
-```bash
-curl -L -o x.zip https://github.com/TimDurward/task-runner/archive/master.zip && unzip x.zip && rm x.zip && mv task-runner-master/* . && rm -r task-runner-master/ && echo -e "\n\nInstalled:\nCore files\n\nEnjoy - github.com/timdurward\n"
-```
-#### Files/Folders included
-
-* Index.html
-* README.md
-* Js Folder
- * Master.js
- * Jquery.js
-* CSS Folder
-  * Master.css
-  * Bootstrap.css
-* Spec Folder
-  * Chai.js
-  * Mocha.js
-  * Mocha.css
-  * Specs.js
-  * spec-runner.html
-
-###### Optional
-* .pairs (installed within `~/.pairs`)
-
-##### Scripts/CSS are linked to index & spec-runner
-
-
-***
-
-<!-- Delete Above -->
-
-
-<!-- README FILE. Replace where needed -->
-# _Application Name_
-
-#### _Short Summary of Application!_
-
-#### By _**Tim Durward**_
+#### By _**Tim Durward and Brooke Hurford**_
 
 ## Description
 
-_Brief Description of Application._
+_This is a game of rolling dice, when you get any number between 2 and 6 you start to rack up a score. If you roll a one your score for that turn is zero and it is the next players turn. If you keep going and don't get a one you have the option to click HOLD. This adds your current score to your total score. First person to get their total score to 20 loses._
 
 ## Setup/Installation Requirements
 
@@ -57,11 +14,6 @@ _Brief Description of Application._
 * _open index.html_
 * _BE. AMAZED._
 
-
-## Support and contact details
-
-_Support and Contact Description_
-
 ## Technologies Used
 
 * _html, css, markdown_
@@ -69,7 +21,7 @@ _Support and Contact Description_
 * _bootstrap, fontAwesome_
 * _hard work_
 
-### License
+## License
 
 The MIT License (MIT)
 
@@ -92,4 +44,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-**_Tim Durward_** Copyright (c) 2015
+**_Tim Durward and Brooke Hurford_** Copyright (c) 2016
