@@ -93,7 +93,7 @@ $(document).ready(function(){
           $(".player1-curScore").text(p1currentScore);
           console.log(diceRoll, p1currentScore);
         }
-        else if(diceRoll === 1) {
+        if (diceRoll === 1) {
           $("#p1Holdbtn").prop('disabled', true);
           $("#p1Rollbtn").prop('disabled', true);
           $("#p2Rollbtn").prop('disabled', false);
@@ -101,29 +101,24 @@ $(document).ready(function(){
           p1DiceRollValue = 0;
           $(".player1-curScore").text(p1DiceRollValue);
         }
-        else {
-          player1.totalScore = player1.totalScore + 100;
-        }
     });
 
     $("#p1Holdbtn").click(function(){
-
       var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
       var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
-      // var diceRoll = pigDice(dice());
-      // var p1currentScore = p1DiceRollValue += diceRoll;
       var p1ValueHold = parseInt($(".player1-curScore").text());
-      debugger;
+      // debugger;
       $("#p1Rollbtn").prop('disabled', true);
       $("#p1Holdbtn").prop('disabled', true);
       $("#p2Rollbtn").prop('disabled', false);
       $("#p2Holdbtn").prop('disabled', false);
-      Player.prototype.addTotalScore = function(){
+
+      Player.prototype.p1addTotalScore = function(){
         return this.totalScore = this.totalScore + p1ValueHold;
       }
 
       p1DiceRollValue = 0;
-      $(".player1-totalScore").text(player1.addTotalScore());
+      $(".player1-totalScore").text(player1.p1addTotalScore());
       $(".player1-curScore").text(p1DiceRollValue);
       $(".p1CurrentRoll").text("");
     });
@@ -133,21 +128,13 @@ $(document).ready(function(){
       var p1Disabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
       var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
       var diceRoll = pigDice(dice());
+      var p2currentScore = p2DiceRollValue += diceRoll;
 
-      while (player2.totalScore < 100) {
+
         if (p2Disabled === false) {
           $(".p2CurrentRoll").text(diceRoll);
-          $(".player2-curScore").text(p2DiceRollValue += diceRoll);
-          // console.log(p2DiceRollValue += diceRoll);
-          $("#p2Holdbtn").click(function(){
-            $("#p2Rollbtn").prop('disabled', true);
-            $("#p2Holdbtn").prop('disabled', true);
-            $("#p1Rollbtn").prop('disabled', false);
-            $("#p1Holdbtn").prop('disabled', false);
-            p2DiceRollValue = 0;
-            $(".player2-curScore").text(p2DiceRollValue);
-            $(".p2CurrentRoll").text("");
-          });
+          $(".player2-curScore").text(p2currentScore);
+        }
 
           if(diceRoll === 1){
             $("#p2Holdbtn").prop('disabled', true);
@@ -156,16 +143,34 @@ $(document).ready(function(){
             $("#p1Holdbtn").prop('disabled', false);
             p2DiceRollValue = 0;
             $(".player2-curScore").text(p2DiceRollValue);
-            break;
-          } else {
-
-            player2.totalScore = player2.totalScore + 100;
           }
-        $(".player2-totalScore").text(player2.totalScore);
-          // console.log(player2.totalScore);
-        }
-      }
     });
+
+    $("#p2Holdbtn").click(function(){
+      var pDisabled = $("#p1Rollbtn, #p1Holdbtn").is(":disabled");
+      var p2Disabled = $("#p2Rollbtn, #p2Holdbtn").is(":disabled");
+      var p2ValueHold = parseInt($(".player2-curScore").text());
+
+      $("#p2Rollbtn").prop('disabled', true);
+      $("#p2Holdbtn").prop('disabled', true);
+      $("#p1Rollbtn").prop('disabled', false);
+      $("#p1Holdbtn").prop('disabled', false);
+
+      Player.prototype.p2addTotalScore = function(){
+        return this.totalScore = this.totalScore + p2ValueHold;
+      }
+
+      p2DiceRollValue = 0;
+      $(".player2-totalScore").text(player2.p2addTotalScore());
+      $(".player2-curScore").text(p2DiceRollValue);
+      $(".p2CurrentRoll").text("");
+
+
+    });
+
+
+
+
     }
   });
 });
