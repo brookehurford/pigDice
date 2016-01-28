@@ -100,6 +100,8 @@ $(document).ready(function(){
           $("#p2Holdbtn").prop('disabled', false);
           p1DiceRollValue = 0;
           $(".player1-curScore").text(p1DiceRollValue);
+          $(".playersTurnAnimationP2").fadeIn(1000);
+          $(".playersTurnAnimationP2").fadeOut(1000);
         }
     });
 
@@ -121,6 +123,10 @@ $(document).ready(function(){
       $(".player1-totalScore").text(player1.p1addTotalScore());
       $(".player1-curScore").text(p1DiceRollValue);
       $(".p1CurrentRoll").text("");
+      if(player1.totalScore >= 20){
+        alert("You win");
+        location.reload();
+      }
     });
 
 
@@ -142,6 +148,8 @@ $(document).ready(function(){
             $("#p1Rollbtn").prop('disabled', false);
             $("#p1Holdbtn").prop('disabled', false);
             p2DiceRollValue = 0;
+            $(".playersTurnAnimationP1").fadeIn(1000);
+            $(".playersTurnAnimationP1").fadeOut(1000);
             $(".player2-curScore").text(p2DiceRollValue);
           }
     });
@@ -164,7 +172,10 @@ $(document).ready(function(){
       $(".player2-totalScore").text(player2.p2addTotalScore());
       $(".player2-curScore").text(p2DiceRollValue);
       $(".p2CurrentRoll").text("");
-
+      if(player2.totalScore >= 20){
+        alert("You win");
+        location.reload();
+      }
 
     });
 

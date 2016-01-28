@@ -1,3 +1,57 @@
 .pigDiceGame {
   display: none;
 }
+
+.playerHeader {
+  font-size: 32px;
+}
+
+.btn-primary, .btn-default {
+  width: 100%;
+}
+
+.currentScoreText {
+  font-size: 20px;
+}
+
+.totalScoreText {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.player1-curScore, .player2-curScore {
+  font-size: 36px;
+}
+
+.player1-totalScore, .player2-totalScore {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.btn-default {
+  background-color: #e0e0e0;
+}
+
+.playersTurnAnimationP1{
+  display: none;
+  font-size: 40px;
+  width: 30%;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: -190px;
+  padding: 20px
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.playersTurnAnimationP2{
+  display: none;
+  font-size: 40px;
+  margin-top: -190px;
+  margin-left: 400px;
+  width: 30%;
+  text-align: center;
+  padding: 20px
+  border: 1px solid black;
+  background-color: gray;
+}
