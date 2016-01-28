@@ -1,13 +1,59 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  line-height: 30px;
+}
+
+input {
+  margin-left: 10px;
+}
+
+hr{
+  border-color: black;
+}
+
+.form-group {
+  padding-right: 50px;
+}
+
+.startGame {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Buttons
+================*/
+
+.btn-primary, .btn-default {
+  width: 100%;
+}
+
+.btn-default {
+  background-color: #e0e0e0;
+}
+
+
+/* Game Styles
+=======================*/
+
 .pigDiceGame {
   display: none;
+  background-color: #f1f1f1;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 250px;
 }
 
 .playerHeader {
   font-size: 32px;
-}
-
-.btn-primary, .btn-default {
-  width: 100%;
 }
 
 .currentScoreText {
@@ -28,9 +74,10 @@
   font-weight: bold;
 }
 
-.btn-default {
-  background-color: #e0e0e0;
-}
+
+
+/* Animations between turns
+======================*/
 
 .playersTurnAnimationP1{
   display: none;
