@@ -4,7 +4,7 @@
 
 ## Description
 
-_This is a game of rolling dice, when you get any number between 2 and 6 you start to rack up a score. If you roll a one your score for that turn is zero and it is the next players turn. If you keep going and don't get a one you have the option to click HOLD. This adds your current score to your total score. First person to get their total score to 20 loses._
+_This is a game of rolling dice, when you get any number between 2 and 6 you start to rack up a score. If you roll a one your score for that turn is zero and it is the next players turn. If you keep going and don't get a one you have the option to click HOLD. This adds your current score to your total score. First person to get their total score to 50 Wins._
 
 ## Setup/Installation Requirements
 
@@ -18,7 +18,7 @@ _This is a game of rolling dice, when you get any number between 2 and 6 you sta
 
 * _html, css, markdown_
 * _Jquery, javascript_
-* _bootstrap, fontAwesome_
+* _bootstrap, MochaJs, ChaiJs_
 * _hard work_
 
 ## License
