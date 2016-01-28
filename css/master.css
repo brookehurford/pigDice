@@ -34,24 +34,31 @@
 
 .playersTurnAnimationP1{
   display: none;
-  font-size: 40px;
+  padding-top: 110px;
+  font-size: 45px;
   width: 30%;
   text-align: center;
+  min-height: 300px;
   margin-left: 400px;
-  margin-top: -190px;
+  margin-top: -300px;
   padding: 20px
   border: 1px solid black;
-  background-color: gray;
+  border-radius: 10px;
+  background-color: rgba(191, 191, 191, 0.85);
 }
+
 
 .playersTurnAnimationP2{
   display: none;
-  font-size: 40px;
-  margin-top: -190px;
-  margin-left: 400px;
+  padding-top: 110px;
+  font-size: 45px;
   width: 30%;
   text-align: center;
+  min-height: 300px;
+  margin-left: 400px;
+  margin-top: -300px;
   padding: 20px
   border: 1px solid black;
-  background-color: gray;
+  border-radius: 10px;
+  background-color: rgba(191, 191, 191, 0.85);
 }
