@@ -86,6 +86,8 @@ $(document).ready(function(){
             $("#p1Holdbtn").prop('disabled', true);
             $("#p2Rollbtn").prop('disabled', false);
             $("#p2Holdbtn").prop('disabled', false);
+            p1DiceRollValue = 0;
+            $(".player1-curScore").text(p1DiceRollValue);
           });
 
           if(diceRoll === 1){
