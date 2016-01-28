@@ -88,6 +88,7 @@ $(document).ready(function(){
             $("#p2Holdbtn").prop('disabled', false);
             p1DiceRollValue = 0;
             $(".player1-curScore").text(p1DiceRollValue);
+            $(".p1CurrentRoll").text("");
           });
 
           if(diceRoll === 1){
@@ -124,6 +125,9 @@ $(document).ready(function(){
             $("#p2Holdbtn").prop('disabled', true);
             $("#p1Rollbtn").prop('disabled', false);
             $("#p1Holdbtn").prop('disabled', false);
+            p2DiceRollValue = 0;
+            $(".player2-curScore").text(p2DiceRollValue);
+            $(".p2CurrentRoll").text("");
           });
 
           if(diceRoll === 1){
